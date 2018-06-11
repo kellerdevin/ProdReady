@@ -269,7 +269,7 @@ class DetailsScreen extends React.Component {
         DateTrans: res.DateTrans,
         DateCreated: res.DateCreated,
 
-        Merchant: res.Mechant,
+        Merchant: res.Merchant,
 
       })
     })
@@ -344,7 +344,7 @@ class DetailsScreen extends React.Component {
           </Text>
         </Text>
         <Text style={[styles.BottemText, styles.All, styles.greyText]}>
-          Merchant: {this.state.Mechant}
+          Merchant: {this.state.Merchant}
           <Text style={[styles.more,]}>                                                   more
           </Text>
         </Text>

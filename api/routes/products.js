@@ -33,7 +33,7 @@ router.get('/', (req, res, next) => {
             DateTrans: '3/15/2017',
             DateCreated: '4/26/2016',
 
-            Mechant: 'Louis Vuitton'
+            Merchant: 'Louis Vuitton'
         },
 
 );
