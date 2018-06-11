@@ -434,9 +434,6 @@ const styles = StyleSheet.create({
   all: {
     marginLeft: 20,
   },
-  header: {
-    fontSize: 32,
-  },
   bold: {
     fontWeight: 'bold',
   },
@@ -503,11 +500,11 @@ const styles = StyleSheet.create({
     height: 60,
   },
   header: {
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: 'bold'
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 24,
     color: '#8E8B93',
   },
   transfer: {
