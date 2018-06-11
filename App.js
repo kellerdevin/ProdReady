@@ -90,7 +90,7 @@ class HomeScreen extends React.Component {
         return (
           <View style={{ backgroundColor: 'white' }}>
         <View style={{ flexDirection: "row" }}>
-          <Text style={[styles.header, styles.bold, styles.all]}>Wallet                             {'\n'}
+          <Text style={[styles.header, styles.bold, styles.all,]}>Wallet                             {'\n'}
                   <Text style={[styles.hash, styles.gray, styles.all]}>
                   {this.state.blockinfo}
             <Text style={[styles.copy]}>
@@ -368,9 +368,6 @@ const styles = StyleSheet.create({
   all: {
     marginLeft: 20,
   },
-  header: {
-    fontSize: 32,
-  },
   bold: {
     fontWeight: 'bold',
   },
@@ -506,7 +503,7 @@ const styles = StyleSheet.create({
     height: 60,
   },
   header: {
-    fontSize: 23,
+    fontSize: 30,
     fontWeight: 'bold'
   },
   subtitle: {
