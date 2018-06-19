@@ -1,7 +1,6 @@
 import React, { Component, } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Linking } from 'react-native';
 
-
 export default class LotsOfStyles extends Component {
   render() {
     return (

@@ -1,9 +1,10 @@
 import React, { Component, } from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity,View, Image, NavigatorIOS, Button} from 'react-native';
 import firebase from 'firebase';
-import { Header, Spinner, ProdPage, BlockInfo, StackNav } from './src/components/common';
+import { Header, Spinner, ProdPage, StackNav, } from './src/components/common';
+import BlockInfo from './src/components/common/BlockInfo'
 import LoginForm from './src/components/LoginForm';
-import api from './utilities/api.js'
+import api from './src/components/api'
 import { createStackNavigator } from 'react-navigation';
 
 
@@ -205,24 +206,9 @@ class DetailsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      blockinfo: '',
-      avatar: '',
-
       prodTitle: '',
       subTitle: '',
       prodimg: '',
-
-      RAP1T: '',
-      RAP1ST: '',
-      RAP1img: '',
-
-      RAP2T: '',
-      RAP2ST: '',
-      RAP2img: '',
-
-      RAP3T: '',
-      RAP3ST: '',
-      RAP3img: '',
 
       Hash: '',
       toYou: '',
@@ -242,24 +228,11 @@ class DetailsScreen extends React.Component {
   componentDidMount() {
     api.twoApi().then((res) => {
       this.setState({
-        blockinfo: res.blockinfo,
-        avatar: res.avatar,
         prodTitle: res.prodTitle,
         subTitle: res.subTitle,
         prodimg: res.prodimg,
 
-        RAP1T: res.RAP1T,
-        RAP1ST: res.RAP1ST,
-        RAP1img: res.RAP1img,
-
-        RAP2T: res.RAP2T,
-        RAP2ST: res.RAP2ST,
-        RAP2img: res.RAP2img,
-
-        RAP3T: res.RAP3T,
-        RAP3ST: res.RAP3ST,
-        RAP3img: res.RAP3img,
-
+        
         Hash: res.Hash,
         toYou: res.toYou,
         FromTrans: res.FromTrans,
@@ -279,77 +252,7 @@ class DetailsScreen extends React.Component {
   }
   render() {
     return (
-      <View style={{ backgroundColor: 'white' }}>
-        <View style={{ width: 500, height: 30, backgroundColor: 'white' }} />
-        <Text style={[styles.header, styles.All]}>
-          {this.state.prodTitle}
-        </Text>
-        <Text style={[styles.subtitle, styles.All]}>
-          {this.state.subTitle}           <Text style={[styles.transfer,]}> Transfer </Text>
-        </Text>
-        <Image
-          style={{
-            width: 200,
-            height: 200,
-            alignSelf: 'center',
-            paddingBottom: 5,
-          }}
-          source={{ url: this.state.prodimg }}
-        />
-        <Text style={[styles.BlockInfo, styles.All]}>
-          Block Info
-        </Text >
-        <Text style={[styles.Hash, styles.All]}>
-          ETH Pop Link
-          <Text style={[styles.Blue,]}>  view
-          </Text>
-        </Text>
-        <Text style={[styles.All, styles.Hash]}>
-          Hash: {this.state.Hash}
-        </Text>
-        <View style={{ width: 500, height: 10, backgroundColor: 'white' }} />
-        <View style={{ width: 500, height: 2, backgroundColor: '#C9C9C9' }} />
-        <Text style={[styles.BlockInfo, styles.All]}>
-          History
-        </Text>
-        <View style={{ width: 500, height: 30, backgroundColor: 'white' }} />
-        <Text style={[styles.TopText, styles.All, styles.greyText]}>
-          Item Transfered to You
-          <Text style={[styles.gray, styles.date]}>                               {this.state.DateToYou}
-          </Text>
-        </Text>
-        <Text style={[styles.BottemText, styles.All, styles.greyText]}>
-          From: {this.state.FromTrans}
-          <Text style={[styles.more,]}>                                       more
-          </Text>
-        </Text>
-        <View style={{ width: 500, height: 30, backgroundColor: 'white' }} />
-        <Text style={[styles.TopText, styles.All, styles.greyText]}>
-          Item Transfered
-          <Text style={[styles.gray, styles.date]}>                                          {this.state.DateTrans}
-          </Text>
-        </Text>
-        <Text style={[styles.BottemText, styles.All, styles.greyText]}>
-          From: {this.state.FromTrans}
-        </Text>
-        <Text style={[styles.BottemText, styles.All, styles.greyText]}>
-          To: {this.state.To}
-         <Text style={[styles.more,]}>                                           more
-         </Text>
-          <View style={{ width: 500, height: 30, backgroundColor: 'white' }} />
-        </Text>
-        <Text style={[styles.TopText, styles.All, styles.greyText]}>
-          Item Created
-          <Text style={[styles.gray, styles.date]}>                                              {this.state.DateCreated}
-          </Text>
-        </Text>
-        <Text style={[styles.BottemText, styles.All, styles.greyText]}>
-          Merchant: {this.state.Merchant}
-          <Text style={[styles.more,]}>                                                   more
-          </Text>
-        </Text>
-        <View style={{ width: 500, height: 30, backgroundColor: 'white' }} />
-      </View>
+        <BlockInfo />
     );
   }
 }
@@ -500,7 +403,7 @@ const styles = StyleSheet.create({
     height: 60,
   },
   header: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: 'bold'
   },
   subtitle: {
@@ -537,14 +440,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     backgroundColor: '#E9E4F1',
     shadowColor: 'black',
-
   },
   All: {
     marginLeft: 20
   },
   greyText: {
     backgroundColor: '#E9E4F1',
-
   },
   date: {
     color: '#8C8794',
