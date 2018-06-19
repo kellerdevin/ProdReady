@@ -91,12 +91,12 @@ class HomeScreen extends React.Component {
         return (
           <View style={{ backgroundColor: 'white' }}>
         <View style={{ flexDirection: "row" }}>
-          <Text style={[styles.header, styles.bold, styles.all,]}>Wallet                             {'\n'}
-                  <Text style={[styles.hash, styles.gray, styles.all]}>
-                  {this.state.blockinfo}
-            <Text style={[styles.copy]}>
+          <Text style={[styles.header, styles.all,]}>Wallet                             {'\n'}
+            <Text style={[styles.hash, styles.gray, styles.all]}>
+              {this.state.blockinfo}
+              <Text style={[styles.copy]}>
                 COPY
-            </Text>
+              </Text>
             <Text>                              </Text>
             </Text>                      
           </Text>
@@ -259,6 +259,13 @@ class DetailsScreen extends React.Component {
 
 
 const styles = StyleSheet.create({
+  all: {
+    marginLeft: 20,
+  },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
   textStyle: {
     alignSelf: 'center',
     color: '#007aff',
@@ -267,9 +274,6 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 24,
-  },
-  all: {
-    marginLeft: 20,
   },
   bold: {
     fontWeight: 'bold',
@@ -333,9 +337,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 30
-  },
-  all: {
-    marginLeft: 20,
   },
   bold: {
     fontWeight: 'bold',
@@ -402,10 +403,6 @@ const styles = StyleSheet.create({
     width: 70,
     height: 60,
   },
-  header: {
-    fontSize: 30,
-    fontWeight: 'bold'
-  },
   subtitle: {
     fontSize: 24,
     color: '#8E8B93',
@@ -441,7 +438,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E9E4F1',
     shadowColor: 'black',
   },
-  All: {
+  all: {
     marginLeft: 20
   },
   greyText: {
