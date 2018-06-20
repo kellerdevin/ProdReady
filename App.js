@@ -63,7 +63,7 @@ class HomeScreen extends React.Component {
               <View style={{ width: 500, height: 5, backgroundColor: 'white' }} />
               <Text style={ styles.newProd }>NEW PRODUCT</Text>
               <Text style={styles.prodTitle}>{this.state.prodTitle}</Text>
-              <Text style={[styles.subTitle, styles.gray]}>{this.state.subTitle}</Text>
+              <Text style={[styles.subTitle]}>{this.state.subTitle}</Text>
             </View>
          <View>
           <Button

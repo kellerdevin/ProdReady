@@ -36,6 +36,7 @@ class RecentAdditions extends React.Component {
                 console.error(error)
             })
     }
+    
     render() {
         return (
             <View>
