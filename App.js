@@ -9,7 +9,6 @@ import LoginForm from './src/components/LoginForm';
 import api from './src/components/api'
 import { createStackNavigator } from 'react-navigation';
 
-
 class HomeScreen extends React.Component {
     constructor(props){
     super(props);
@@ -60,10 +59,12 @@ class HomeScreen extends React.Component {
         return (
           <View style={{ backgroundColor: 'white' }}>
             <ProdPageHead />
-            <View style={{ width: 500, height: 5, backgroundColor: 'white' }} />
-            <Text style={[styles.all, styles.newProd, ]}>NEW PRODUCT</Text>
-            <Text style={[styles.prodTitle, styles.all]}>{this.state.prodTitle}</Text>
-            <Text style={[styles.subTitle, styles.gray, styles.all]}>{this.state.subTitle}</Text>
+            <View style={ styles.all }>
+              <View style={{ width: 500, height: 5, backgroundColor: 'white' }} />
+              <Text style={ styles.newProd }>NEW PRODUCT</Text>
+              <Text style={styles.prodTitle}>{this.state.prodTitle}</Text>
+              <Text style={[styles.subTitle, styles.gray]}>{this.state.subTitle}</Text>
+            </View>
          <View>
           <Button
             title="View Details"
@@ -110,7 +111,6 @@ class DetailsScreen extends React.Component {
   }
 }
 
-
 const styles = StyleSheet.create({
   all: {
     marginLeft: 20,
@@ -125,11 +125,8 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 20,
     color: '#8E8B93',
-  },
-  gray: {
     color: 'dimgray',
   },
-
 });
 
 const RootStack = createStackNavigator(
