@@ -40,8 +40,8 @@ class RecentAdditions extends React.Component {
         return (
             <View>
                 <View style={{ width: 500, height: 10, backgroundColor: 'white' }} />
-                <Text style={[styles.all, styles.bold, styles.recentAdd ]}>Recent Additions
-                    <Text style={[styles.seeAll, styles.blue,]}>                          See All</Text>
+                <Text style={[styles.all, styles.recentAdd ]}>Recent Additions
+                    <Text style={[styles.seeAll, ]}>                          See All</Text>
                     <View style={{ width: 500, height: 5, backgroundColor: 'white' }} />
                 </Text>
                 <View style={{ flexDirection: "row", }}>
@@ -97,19 +97,15 @@ const styles = StyleSheet.create({
     all: {
         marginLeft: 20,
     },
-    bold: {
-        fontWeight: 'bold',
-    },
     recentAdd: {
         fontSize: 22,
         paddingLeft: 10,
+        fontWeight: 'bold'
     },
     seeAll: {
         fontSize: 15,
         fontWeight: 'normal',
-    },
-    blue: {
-        color: 'blue',
+        color: 'blue'
     },
     rA: {
         width: 90,
