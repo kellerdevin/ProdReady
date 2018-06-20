@@ -1,8 +1,9 @@
 import React, { Component, } from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity,View, Image, NavigatorIOS, Button} from 'react-native';
 import firebase from 'firebase';
-import { Header, Spinner, ProdPage, StackNav, } from './src/components/common';
+import { Header, Spinner, StackNav, } from './src/components/common';
 import BlockInfo from './src/components/common/BlockInfo'
+import ProdPageHead from './src/components/common/ProdPageHead'
 import LoginForm from './src/components/LoginForm';
 import api from './src/components/api'
 import { createStackNavigator } from 'react-navigation';
@@ -90,31 +91,12 @@ class HomeScreen extends React.Component {
       case true:
         return (
           <View style={{ backgroundColor: 'white' }}>
-        <View style={{ flexDirection: "row" }}>
-          <Text style={[styles.header, styles.all,]}>Wallet                             {'\n'}
-            <Text style={[styles.hash, styles.gray, styles.all]}>
-              {this.state.blockinfo}
-              <Text style={[styles.copy]}>
-                COPY
-              </Text>
-            <Text>                              </Text>
-            </Text>                      
-          </Text>
-          <Image
-            style={{ width: 64, height: 64, borderRadius: 32 }}
-            source={{url: this.state.avatar }}
-          />
-
-        </View>
-        
-        <View style={{ width: 500, height: 1, backgroundColor: 'grey' }} />
-        
-
-        <View style={{ width: 500, height: 5, backgroundColor: 'white' }} />
-        <Text style={[styles.blue, styles.newProd, styles.all]}>NEW PRODUCT</Text>
+            <ProdPageHead />
+            <View style={{ width: 500, height: 5, backgroundColor: 'white' }} />
+            <Text style={[styles.blue, styles.newProd, styles.all]}>NEW PRODUCT</Text>
             <Text style={[styles.prodTitle, styles.all]}>{this.state.prodTitle}</Text>
-        <Text style={[styles.subTitle, styles.gray, styles.all]}>{this.state.subTitle}</Text>
-        <View>
+            <Text style={[styles.subTitle, styles.gray, styles.all]}>{this.state.subTitle}</Text>
+         <View>
           <Button
             title="View Details"
             onPress={() => this.props.navigation.navigate('Details')}
